@@ -1,0 +1,27 @@
+<button id="theme-toggle" class="btn-toggle" aria-label="Alternar tema">
+    <span id="theme-icon">🌙</span>
+</button>
+
+<script th:inline="javascript">
+    (function(){
+        const toggle = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+
+        function setTheme(t){
+            document.documentElement.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+            icon.textContent = (t === 'dark') ? '☀️' : '🌙';
+        }
+
+        toggle.addEventListener('click', () => {
+            const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            setTheme(cur === 'dark' ? 'light' : 'dark');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('theme') || 'dark';
+            setTheme(saved);
+        });
+    })();
+    /*]]>*/
+</script>

@@ -26,6 +26,12 @@ public class Jogo {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    @ManyToOne
+    @JoinColumn(name = "estudio_id")
+    private Estudio estudio;
+
+
+
     public Long getId() {
         return id;
     }
@@ -89,4 +95,13 @@ public class Jogo {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public Estudio getEstudio() {
+        return estudio;
+    }
+
+    public void setEstudio(Estudio estudio) {
+        this.estudio = estudio;
+    }
+
 }
