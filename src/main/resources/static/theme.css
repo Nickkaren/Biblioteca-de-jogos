@@ -10,21 +10,32 @@
     --card-bg: #1c1c1e;
 }
 
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg);
     color: var(--text);
 }
 
-.container, main, .card {
-    background-color: var(--card-bg);
+main.container {
+    flex: 1;
+    padding-bottom: 2rem;
 }
 
-.footer {
+.container, .card {
     background-color: var(--card-bg);
-    color: var(--text);
 }
 
 a, a:hover {
     color: var(--text);
     text-decoration: none;
+}
+
+.footer {
+    background-color: var(--card-bg);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
